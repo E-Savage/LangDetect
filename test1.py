@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np
+import joblib
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
@@ -21,9 +22,12 @@ X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random
 # this problem uses multiclassification so.... Naive Bayes algo is the way to go
 
 model = MultinomialNB()
-model.fit(X_train,y_train)
+model = model.fit(X_train,y_train)
 model.score(X_test,y_test)
 
+# saving model to a file, save vectorizer to a file
+joblib.dump(model, 'langModel.joblib')
+joblib.dump(cv,'vectorizer.joblib')
 
 user = input("Enter a Text: ")
 data = cv.transform([user]).toarray()

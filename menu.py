@@ -34,16 +34,16 @@ class Menu:
                 return self.selected_item
 
 
-def main(stdscr):
-    curses.curs_set(0)
-    items = ["Language Detection", "Help Page", "About page", "Exit"]
-    menu = Menu(items, stdscr)
-    result = menu.run()
-    stdscr.clear()
-    stdscr.addstr(0, 0, f"You selected: {items[result]}")
-    stdscr.refresh()
-    stdscr.getch()
+# def main(stdscr):
+#     curses.curs_set(0)
+#     items = ["Language Detection", "Help Page", "About page", "Exit"]
+#     menu = Menu(items, stdscr)
+#     result = menu.run()
+#     stdscr.clear()
+#     stdscr.addstr(0, 0, f"You selected: {items[result]}")
+#     stdscr.refresh()
+#     stdscr.getch()
 
 
-if __name__ == "__main__":
-    curses.wrapper(main)
+# if __name__ == "__main__":
+#     curses.wrapper(main)

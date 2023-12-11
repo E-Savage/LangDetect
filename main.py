@@ -1,14 +1,12 @@
 import curses
 from menu import Menu
-import sys
+import joblib
 
 import pandas as pd
 import numpy as np
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
-
-global title
 
 def main(scr):
     running = True
@@ -27,6 +25,12 @@ def main(scr):
 
     items = ["Language Detection", "Help Page", "About page", "Exit"]
 
+    langModel = joblib.load("langModel.joblib")
+    cv = joblib.load("vectorizer.joblib")
+
+    prev_detection = ''
+    prev_sentence = ''
+
     while running:
         scr.addstr(0,0, title)
         scr.refresh()
@@ -35,8 +39,48 @@ def main(scr):
         win = curses.newwin(9, 86, 16, 4)
 
         if items[result] == 'Language Detection':
-            #here is something
-            t = 4
+            win.clear()
+            win.touchwin()
+            curses.echo()
+            scr.refresh()
+            win.box()
+            win.border()
+            win.addstr(0, 0, "Language detection ")
+            
+            detecting = True
+            while detecting:
+                win.addstr(1, 1, "Enter text to be detected: ")
+                win.addstr(3, 1, "Current Detection:")
+                win.addstr(4, 1, "sentence: %s"%prev_sentence)
+                win.addstr(5, 1, "The detected language is: %s"%prev_detection)
+                win.addstr(7, 1, "To exit this mode please type q and press enter")
+                win.clrtoeol()
+                win.move(1, 28)
+                raw_input = win.getstr()
+                sentence = raw_input.decode('utf-8')
+                sentence = sentence.strip().lower()
+                print(sentence)
+                if len(sentence) == 0 or (sentence[0] == 'q' and len(sentence) == 1):
+                    detecting = False
+                else: 
+                    data = cv.transform([sentence]).toarray()
+                    detection = langModel.predict(data)
+                    prev_detection = detection
+                    prev_sentence = sentence
+                    win.clear()
+                    win.touchwin()
+                    win.refresh()
+                    win.box()
+                    win.addstr(0, 0, "Language Detection")
+                    win.addstr(1, 1, "Enter text to be detected")
+                    win.addstr(3, 1, "Current Detection:")
+                    win.addstr(4, 1, "sentence: %s"%prev_sentence)
+                    win.addstr(5, 1, "The detected language is: %s"%prev_detection)
+                    win.addstr(7, 1, "To exit this mode please type q and press enter")
+                    win.refresh()
+                win.refresh()
+   
+            scr.refresh()
             
         elif items[result] == 'Help Page':
             '''
@@ -47,7 +91,7 @@ def main(scr):
             win.touchwin()
             scr.refresh()
             win.box()
-            win.addstr(0, 0, "Help Page") 
+            win.addstr(0, 0, "Help Page ") 
             win.addstr(1, 1, "(1) Language detection, option takes user to language detection page  allows user to")
             win.addstr(2, 5, "enter text to determine language of the text, to quit this mode press q and then")
             win.addstr(3, 5, "enter to be taken back to this main screen")
@@ -65,7 +109,7 @@ def main(scr):
             win.touchwin()
             scr.refresh()
             win.box()
-            win.addstr(0, 0, "About Page")
+            win.addstr(0, 0, "About Page ")
             win.addstr(1, 1, "This app is a final project for CIS 542 Digital Forensics. Topic chosen was")
             win.addstr(2, 1, "detection of languages from text or audio. I decided to go with text. This")
             win.addstr(3, 1, "project's purpose was to give me a tutorial on how to incorporate ML in to")
@@ -89,4 +133,3 @@ def menu_print(items, scr):
 
 if __name__ == "__main__":
     curses.wrapper(main)
-
