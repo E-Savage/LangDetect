@@ -10,11 +10,11 @@
 
 ## Installation
 Prereqs: 
-1. You will need to do the pip install for python curses for your system using "*__pip install curses__*", if you are on a windows machine you will need to use "pip install windows-curses"
-2. you will need to install the scikit learn packages using "*pip install scikit-learn*"
-3. you need to install joblib using "*pip install joblib*"
+1. You will need to do the pip install for python curses for your system using "*__pip install curses__*", if you are on a windows machine you will need to use "*__pip install windows-curses__*"
+2. you will need to install the scikit learn packages using "*__pip install scikit-learn__*"
+3. you need to install joblib using "*__pip install joblib__*"
 
-*If you are using anaconda then you will should not have to install prerequisite 2 or 3, but it should be noted you should stil check if anaconda installed the library properly*
+*__If you are using anaconda then you will should not have to install prerequisite 2 or 3, but it should be noted you should stil check if anaconda installed the library properly__*
 
 To download the application:
 
