@@ -4,7 +4,7 @@
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage and Purpose](#usage and purpose)
+- [Usage-and-purpose](#usage and purpose)
 - [Contributing](#contributing)
 - [License](#license)
 
