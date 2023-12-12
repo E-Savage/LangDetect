@@ -17,6 +17,7 @@ Prereqs:
 *If you are using anaconda then you will should not have to install prerequisite 2 or 3, but it should be noted you should stil check if anaconda installed the library properly*
 
 To download the application:
+
 Download zipped file from github and extract where you would like to and it will be runnable from there.
 
 ## Usage and purpose
