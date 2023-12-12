@@ -38,7 +38,7 @@ Features within the app:
 I love contributions to open source work. I have a lot of ideas of how to improve this and would love to get feedback from the community on what else could be added. If you would like to contribute please star the repo and make a pull request for whatever you would like to do. Below I have features I would like to implement or Changes I would like to make in the feature to the application, if you have any ideas please add them by making a pull request and adding items to the read me file. I will keep track of what features have been adding and working by updating the task item to complete. Good Luck Developing!
 
 Features to be added:
-- [] Move to GUI
+- [x] Move to GUI
 - [] Add translation feature
 - [] Add phonteic input detection
 - [] Add profiling feature
