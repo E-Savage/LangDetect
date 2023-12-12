@@ -4,7 +4,7 @@
 
 ## Table of Contents
 - [Installation](#installation)
-- [Usage-and-purpose](#usage and purpose)
+- [Usage](#usage)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -20,4 +20,5 @@ To download the application:
 
 Download zipped file from github and extract where you would like to and it will be runnable from there.
 
-## Usage and purpose
+## Usage
+
