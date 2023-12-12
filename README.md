@@ -1,2 +1,8 @@
-# LangDetect
-this is the first rendition of my project
+# 🕵️ LangDetect 🥸
+
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [License](#license)
+
