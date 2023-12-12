@@ -1,12 +1,13 @@
 # 🕵️ Language Detective 🥸
 
-** NOTE: It should be noted that this application is the final Project for the CIS 542: Digital Forensics Course and was created as a requirement for the project submission of this course.
+** NOTE: It should be noted that this application is the final Project for the CIS 542: Digital Forensics Course at the University of Massachusetts at Dartmouth and was created as a requirement for the project submission of this course.
 
 ## Table of Contents
 - [Installation](#installation)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
+- [Thanks](#thanks)
+- [Contact](#contact) 
 
 ## Installation
 Prereqs: 
@@ -34,3 +35,17 @@ Features within the app:
 4. The exit button signals to the system to shut down the program.
 
 ## Contributing
+I love contributions to open source work. I have a lot of ideas of how to improve this and would love to get feedback from the community on what else could be added. If you would like to contribute please star the repo and make a pull request for whatever you would like to do. Below I have features I would like to implement or Changes I would like to make in the feature to the application, if you have any ideas please add them by making a pull request and adding items to the read me file. I will keep track of what features have been adding and working by updating the task item to complete. Good Luck Developing!
+
+Features to be added:
+-[] Move to GUI
+-[] Add translation feature
+-[] Add phonteic input detection
+-[] Add profiling feature
+-[] Add a text carving feature
+
+## Thanks 
+Thank you for taking a look at my project and taking the time to read it. This project was very fun to do and I enjoyed making it over the semester. If you have any suggestions for it please let me know and I look forward to working with you in the future.
+
+## Contact
+If you would like to contact me with any questions please send me a message here on github or you may email me at eric.n.savage2000@gmail.com
