@@ -34,6 +34,8 @@ class Menu:
                 return self.selected_item
 
 
+#this was a test to see how the menu would print
+
 # def main(stdscr):
 #     curses.curs_set(0)
 #     items = ["Language Detection", "Help Page", "About page", "Exit"]

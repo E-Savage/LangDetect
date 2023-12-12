@@ -5,11 +5,6 @@ from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 data = pd.read_csv("https://raw.githubusercontent.com/amankharwal/Website-data/master/dataset.csv")
-print(data.head())
-
-print(data.isnull().sum())
-
-print(data['language'].value_counts())
 
 # language detection model
 x = np.array(data["Text"])
@@ -29,7 +24,7 @@ model.score(X_test,y_test)
 joblib.dump(model, 'langModel.joblib')
 joblib.dump(cv,'vectorizer.joblib')
 
-user = input("Enter a Text: ")
-data = cv.transform([user]).toarray()
-output = model.predict(data)
-print(output)
+sentence = input("Enter a Text: ")
+data = cv.transform([sentence]).toarray()
+detected_sentence = model.predict(data)
+print(detected_sentence)
