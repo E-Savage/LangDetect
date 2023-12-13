@@ -1,7 +1,14 @@
-import pandas as pd
+'''
+    Used article here to understand the libraries and how this works
+    
+    https://thecleverprogrammer.com/2021/10/30/language-detection-with-machine-learning/ 
+'''
+
+
+import pandas as pd # library is used for data manipulation
 import numpy as np
-import joblib
-from sklearn.feature_extraction.text import CountVectorizer
+import joblib # serialization library
+from sklearn.feature_extraction.text import CountVectorizer 
 from sklearn.model_selection import train_test_split
 from sklearn.naive_bayes import MultinomialNB
 data = pd.read_csv("https://raw.githubusercontent.com/amankharwal/Website-data/master/dataset.csv")
@@ -15,7 +22,6 @@ x = cv.fit_transform(x)
 X_train, X_test, y_train, y_test = train_test_split(x, y, test_size=0.33, random_state=42)
 
 # this problem uses multiclassification so.... Naive Bayes algo is the way to go
-
 model = MultinomialNB()
 model = model.fit(X_train,y_train)
 model.score(X_test,y_test)
